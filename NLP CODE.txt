@@ -11,7 +11,7 @@ CORS(app)
 # IMPORTANT: PASTE YOUR GOOGLE GEMINI API KEY HERE
 # Get it for free securely from: https://aistudio.google.com/app/apikey
 # ==============================================================================
-API_KEY = "AIzaSyAGIk5O454_DbM5t3Q7X7E2Qh7cYDP6frU"
+API_KEY = "a------------"
 # Configure the Gemini API network
 genai.configure(api_key=API_KEY)
 # Define the strict instructions for the AI on how to format its output
