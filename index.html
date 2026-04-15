@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Disease Detection</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="app-header">
+    <div class="logo-container">
+      <div class="logo-icon">🌿</div>
+      <h1 class="nav-title" id="t-appTitle">Crop Disease Detection</h1>
+    </div>
+    <div class="lang-selector">
+      <select id="langSelect">
+        <option value="en">English</option>
+        <option value="hi">हिंदी (Hindi)</option>
+        <option value="kn">ಕನ್ನಡ (Kannada)</option>
+        <option value="te">తెలుగు (Telugu)</option>
+        <option value="ml">മലയാളം (Malayalam)</option>
+        <option value="ta">தமிழ் (Tamil)</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-container">
+    <section class="hero-header">
+      <h2 id="t-subtitle">Smart Farming Assistant</h2>
+      <p id="t-heroDesc">Instantly identify plant diseases and get expert advice by uploading a photo or describing symptoms.</p>
+    </section>
+
+    <div class="glass-card main-interface">
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-btn active" id="btnTabUpload"><span class="tab-icon">📷</span> <span id="t-tabUpload">Image Upload</span></button>
+        <button class="tab-btn" id="btnTabQuery"><span class="tab-icon">💬</span> <span id="t-tabQuery">Ask Expert</span></button>
+      </div>
+
+      <div class="tab-content active" id="tabContentUpload">
+        <div class="upload-area" id="dropZone">
+          <div class="upload-icon">📤</div>
+          <p id="t-uploadText">Drag and drop your plant leaf image here or click to upload</p>
+          <input type="file" id="fileInput" accept="image/*" hidden>
+          <button class="btn-secondary" id="btnBrowse" onclick="document.getElementById('fileInput').click()">Browse Files</button>
+        </div>
+        <div id="imagePreview" class="image-preview">
+          <img id="previewImg" src="" alt="Selected Plant" />
+          <button class="btn-icon" id="clearImage">✖</button>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tabContentQuery">
+        <div class="query-area">
+          <textarea id="queryInput" rows="5" placeholder="Describe your plant's problem or symptoms here..."></textarea>
+        </div>
+      </div>
+
+      <!-- Submit Section -->
+      <div class="action-section">
+        <button class="btn-primary" id="btnAnalyze">
+           <span id="t-submitBtn">Analyze</span> <span class="spinner" id="analyzeSpinner" style="display:none;"></span>
+        </button>
+      </div>
+
+      <!-- Result Banner -->
+      <div class="result-card" id="resultCard" style="display: none;">
+        <div class="result-header">
+          <div class="result-icon">🦠</div>
+          <h3 id="t-resultDiseaseLabel">Detected Issue:</h3>
+        </div>
+        <h2 id="detectedDiseaseName" class="disease-name">Sample Disease Name</h2>
+        
+        <div class="solution-box">
+          <h4 id="t-resultSolutionLabel">Recommended Solution:</h4>
+          <p id="recommendedSolutionText">Sample recommendations for treating the specific disease.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  
+  <script src="app.js"></script>
+</body>
+</html>
