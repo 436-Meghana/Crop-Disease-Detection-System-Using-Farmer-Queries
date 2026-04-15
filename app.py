@@ -12,7 +12,7 @@ CORS(app)
 # ==============================================================================
 # SECURE CLOUD DEPLOYMENT: Read API Key from Environment Variables
 # ==============================================================================
-API_KEY = os.environ.get('GEMINI_API_KEY')
+API_KEY = "AIzaSyAGIk5O454_DbM5t3Q7X7E2Qh7cYDP6frU"
 
 # Configure the Gemini API network
 if API_KEY:
