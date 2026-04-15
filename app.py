@@ -52,13 +52,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 @app.route('/')
 def serve_index():
-    # Serve index.html from the absolute parent folder (CropDiseaseDetector)
     return send_from_directory(BASE_DIR, 'index.html')
 
 @app.route('/<path:filename>')
 def serve_static(filename):
-    # Serve css and js files from the absolute parent folder
     return send_from_directory(BASE_DIR, filename)
+
 
 
     try:
